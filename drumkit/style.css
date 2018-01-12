@@ -15,6 +15,13 @@ body {
     font-family: sans-serif;
 }
 
+kbd {
+    display: block;
+    /*font-size: 2vw;*/
+    font-size: 2em;
+
+}
+
 .wrapper {
     /*This will put the divs in a row*/
     display:flex;
@@ -27,7 +34,7 @@ body {
 
 .keys {
     display: flex;
-    width: 75%;
+    width: 50%;
     margin: 0 auto;
     justify-content: space-around;
 }
@@ -43,6 +50,24 @@ body {
     /*border: 2px solid #cc00d8*/
     border: 2px solid black;
     border-radius: 10px;
-    width: 7em;
+    /*width: 7em;*/
+    /*width: 4vw;*/
+    width: 70px;
 
 }
+
+.sound-name {
+    font-family: monospace;
+    /*font-size: .8vw;*/
+}
+
+.pressed {
+    box-shadow: 2px 3px 0px 1px black;
+}
+
+@media all and (max-width: 800px) {
+    .keys {
+        width: 100%;
+    }
+}
+
