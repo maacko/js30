@@ -1,0 +1,48 @@
+html, body {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.wrapper {
+    /*This will put the divs in a row*/
+    display:flex;
+    background: #cc00d8;
+    /*background: #a2f6f6;*/
+    height: 100vh;
+    /*removes the stretch default for keys and centers them*/
+    align-items: center;
+}
+
+.keys {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.key {
+    color: #000000;
+    font-weight: bold;
+    /*background: rgba(128,0,128,0.2);*/
+    background: #FFFFFF;
+    text-align: center;
+    /*border: 2px solid #8A2BE2;*/
+    /*border: 2px solid #0ff;*/
+    /*border: 2px solid #cc00d8*/
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 7em;
+
+}
