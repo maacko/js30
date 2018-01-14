@@ -54,6 +54,7 @@ kbd {
     /*width: 4vw;*/
     width: 70px;
     transition: all 0.07s ease;
+    box-shadow: 2px 3px 0px 1px black;
 
 }
 
@@ -66,7 +67,7 @@ kbd {
     /*background: #00fff9;*/
     /*background: #7bf0db;*/
     background: #50eac7;
-    box-shadow: 2px 3px 0px 1px black;
+    box-shadow: 0px 0px 0px 0px;
 }
 
 @media all and (max-width: 800px) {
