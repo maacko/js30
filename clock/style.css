@@ -1,0 +1,63 @@
+html, body {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock {
+    width: 30rem;
+    height: 30rem;
+    background: #40e0b4;
+    border-radius: 10%;
+    margin: auto;
+    /*need this to make clock the containing block of clock-face*/
+    position: relative;
+}
+
+.clock-face {
+    width: 25rem;
+    height: 25rem;
+    background: #FFFFFF;
+    border-radius: 100%;
+    /*auto doesn't vertically center the element so he have to explicitly set
+     * it
+     */
+    margin: 2.5rem;
+    /*need this to make clock-face the containing block of hand*/
+    position: relative;
+}
+
+.hand {
+    width: 50%;
+    height: 10px;
+    background: #000000;
+    /* We set the hand to absolute so that they're easier to position rather
+     * than having to mess with the margins. As a reminder, absolute positioning
+     * is contained by the nearest ancestor with an absolute/relative
+     * positioning.  Unlike relative positioning, we don't configure our
+     * positioning values based on where it would be placed naturally, rather we
+     * position it starting from the absolute left hand corner of the containing
+     * block.
+     */
+    position: absolute;
+    top: 50%;
+}
+
+
+
+
+
