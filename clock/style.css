@@ -42,7 +42,7 @@ body {
 }
 
 .hand {
-    width: 50%;
+    width: 48%;
     height: 10px;
     background: #000000;
     /* We set the hand to absolute so that they're easier to position rather
@@ -55,9 +55,47 @@ body {
      */
     position: absolute;
     top: 50%;
+    /* The default sets the center of the element as the origin. If a rotation
+     * is applied to an element, it will rotate the element around the center of
+     * element.
+     */
+    transform-origin: 100%;
+    transform: rotate(90deg);
+}
+/*When applying a rotation, a gap between pseudo-element and the element is
+ * rendered. It's slightly noticeable and not a good look.*/
+/*.hand::after {
+    position: relative;
+    display: inline-block;
+    content: "\A";
+    border-top: 4px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 10px solid black;
+    bottom: 5px;
+    right: 10px;
+}
+*/
+
+.second-hand {
+    height: 1px;
 }
 
+/*.second-hand::after {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 4px solid black;
+}
+*/
 
+.circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: black;
+    top: calc(50% - 10px);
+    left: calc(50% - 18px);
+    border-radius: 100%;
+}
 
 
 
