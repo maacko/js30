@@ -1,4 +1,8 @@
 window.onload = function () {
+    var secHand = document.querySelector('.second-hand');
+    var minHand = document.querySelector('.minute-hand');
+    var hourHand = document.querySelector('.hour-hand');
+
     function mapSecondsToDegrees(seconds) {
         /* Since the second hand moves 360degrees every 60 seconds, that means
          * every second it moves 6 degrees (divide the circle, 360deg, into 60
@@ -59,33 +63,22 @@ window.onload = function () {
         return (360/12)*hour;
     }
 
-    function moveseconds(){
-            /*we should move this outside the function since we're taking extra
-             * time by searching the DOM tree each second. We only need to do
-             * this once*/
-        var secHand = document.querySelector('.second-hand');
-        var minHand = document.querySelector('.minute-hand');
-        var hourHand = document.querySelector('.hour-hand');
-        /*interesting...I get the date three separate times, doesn't this
-         * unsync the thing? I doubt it since the hour doesn't change fast
-         * hours and minutes don't change as fast as the second. I don't
-         * think this is good practice though since we're wasting time
-         * computing the Date three separate times.*/
-        var seconds = new Date().getSeconds();
-        var minutes = new Date().getMinutes();
-        var hour = new Date().getHours();
-        //var totalSecondsElapsed = minutes*60 + seconds;
+    function draw(){
+        var timeNow = new Date();
+        var seconds = timeNow.getSeconds();
+        var minutes = timeNow.getMinutes();
+        var hour = timeNow.getHours();
+
         //add 90deg to account for the fact that the hand's initial position is
         //at 90deg.
-        //var degrees = mapSecondsToDegrees(totalSecondsElapsed) + 90;
         var degrees = mapSecondsToDegrees(seconds) + 90;
         var degreesmin = mapMinutesToDegrees(minutes, seconds) + 90;
         var degreehour = mapHourToDegrees(hour) + 90;
+
         secHand.style.transform = `rotate(${degrees}deg)`;
         minHand.style.transform = `rotate(${degreesmin}deg)`;
         hourHand.style.transform = `rotate(${degreehour}deg)`;
-
     }
 
-    setInterval(moveseconds, 1000);
+    setInterval(draw, 1000);
 }
